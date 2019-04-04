@@ -39,6 +39,9 @@ func getBook(w http.ResponseWriter, r *http.Request) {
 	//params:=mux.Vars(r)
 }
 func createbook(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	var book Book
+	_ = json.NewDecoder(r.Body).Decode(&book)
 
 }
 func updateBook(w http.ResponseWriter, r *http.Request) {
